@@ -5,7 +5,7 @@ public class Student {
     private String name;
     private String branch;
     private int percentage;
-    private int phone;
+    private long phone;
     private String email;
 
     public int getId() {
@@ -40,11 +40,11 @@ public class Student {
         this.percentage = percentage;
     }
 
-    public int getPhone() {
+    public long getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 
@@ -56,7 +56,7 @@ public class Student {
         this.email = email;
     }
 
-    public Student(String name, String branch, int percentage, int phone, String email) {
+    public Student(String name, String branch, int percentage, long phone, String email) {
         super();
         this.name = name;
         this.branch = branch;
@@ -64,6 +64,16 @@ public class Student {
         this.phone = phone;
         this.email = email;
     }
+    public Student(int id,String name, String branch, int percentage, long phone, String email) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.branch = branch;
+        this.percentage = percentage;
+        this.phone = phone;
+        this.email = email;
+    }
+
 
     @Override
     public String toString() {

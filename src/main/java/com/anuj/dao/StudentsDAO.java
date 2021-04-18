@@ -16,11 +16,26 @@ public class StudentsDAO {
         this.sqlSession = sqlSession;
     }
 
-    public void insertAll(Student student){
+    public void insertAll(Student student) {
         try {
             sqlSession.insert("com.anuj.mybatis.mappers.Student.insert", student);
+        } catch (Exception e) {
+            throw e;
         }
-        catch ( Exception e){
+    }
+
+    public void updateById(Student student) {
+        try {
+            sqlSession.insert("com.anuj.mybatis.mappers.Student.update", student);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    public int getLastInsertedId(){
+        try{
+            return  sqlSession.selectOne("com.anuj.mybatis.mappers.Student.getLastInsertedId");
+        }catch (Exception e){
             throw e;
         }
     }

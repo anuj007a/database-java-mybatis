@@ -16,7 +16,7 @@
                 <property name="password" value="Netradyne_123"/>
             </dataSource>
         </environment>
-        <!--<environment id="development">
+       <!-- <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="${driver}"/>

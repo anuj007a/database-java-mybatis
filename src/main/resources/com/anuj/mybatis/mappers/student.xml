@@ -12,11 +12,13 @@
         <result property = "phone" column = "PHONE"/>
         <result property = "email" column = "EMAIL"/>
     </resultMap>
+    <resultMap id="id" type="int">
+        <result property=" id" column = "LAST_INSERT_ID()"/>
+    </resultMap>
 
     <insert id="insert" parameterType="com.anuj.models.Student">
         INSERT INTO student (NAME, BRANCH, PERCENTAGE, PHONE, EMAIL )
         VALUES (#{name}, #{branch}, #{percentage}, #{phone}, #{email});
-
         <selectKey keyProperty = "id" resultType = "int" order = "AFTER">
             select last_insert_id() as id
         </selectKey>
@@ -33,5 +35,9 @@
 
     <select id="getAll" resultMap="result">
         SELECT * FROM student;
+    </select>
+
+    <select id="getLastInsertedId" resultMap="id">
+        SELECT LAST_INSERT_ID();
     </select>
 </mapper>
