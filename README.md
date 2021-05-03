@@ -1,1 +1,1 @@
-# Database Java Mybatis
+# Database utils - Java & Mybatis
